@@ -17,7 +17,7 @@ git clone <project-link>
 Install Android Studio by following this link:
 https://developer.android.com/studio
 
-Install the Android emulator to be able to run Android application on laptop
+Install the Android emulator to be able to run Android application on laptop or use an Android phone
 
 ## Deployment
 
