@@ -16,6 +16,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         String userName = getIntent().getStringExtra("username");
         TextView userText = (TextView) findViewById(R.id.HomeUsernameDsply);
+        userText.setText(userName);
 
         //Starting menu for home
         loadFragment(new HomeFragmentOne());
