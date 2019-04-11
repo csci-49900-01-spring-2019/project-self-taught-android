@@ -13,4 +13,5 @@
         <item>College</item>
         <item>Graduate</item>
     </string-array>
+    <string name="take_picture">Take Picture</string>
 </resources>
