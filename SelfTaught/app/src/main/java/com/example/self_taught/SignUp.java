@@ -3,11 +3,28 @@ package com.example.self_taught;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.Iterator;
+import java.util.Map;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class SignUp extends AppCompatActivity {
 
@@ -55,9 +72,27 @@ public class SignUp extends AppCompatActivity {
                 String gradeStr = gradeSpinner.getSelectedItem().toString();
 
                 //Adding information through API calls.
+               /** RequestQueue myRequestQueue = (RequestQueue) Volley.newRequestQueue(getApplicationContext());
 
-                Intent homeIntent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(homeIntent);
+                String url = "https://selftaughapp.com/users";
+                StringRequest myRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                })
+                {
+                    protected Map<String, String> getParams()
+                    {
+                        Map<String, String> myData = new HashMap<String, >
+                    }
+                }**/
+
             }
         });
     }
