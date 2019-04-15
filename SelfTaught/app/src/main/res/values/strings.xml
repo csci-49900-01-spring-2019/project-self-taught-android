@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Self-Taught</string>
+    <string name="title_activity_home_screen">HomeScreen</string>
+    <string-array name="genders">
+        <item>Secret</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="grades">
+        <item>K-12</item>
+        <item>Highschool</item>
+        <item>College</item>
+        <item>Graduate</item>
+    </string-array>
+    <string name="take_picture">Take Picture</string>
+</resources>
