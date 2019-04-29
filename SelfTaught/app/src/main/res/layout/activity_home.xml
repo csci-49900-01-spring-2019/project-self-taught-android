@@ -20,14 +20,14 @@
 
         <TextView
             android:id="@+id/HomeMenuOptOne"
-            android:layout_width="102dp"
+            android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="@color/red"
             android:clickable="true"
             android:text="Home"
-            android:textSize="13pt"
+            android:textSize="10pt"
             android:textAlignment="center"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -39,7 +39,7 @@
 
         <TextView
             android:id="@+id/HomeMenuOptTwo"
-            android:layout_width="102dp"
+            android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
@@ -50,7 +50,7 @@
             android:background="@color/blue"
             android:clickable="true"
             android:text="Search"
-            android:textSize="13pt"
+            android:textSize="10pt"
             android:textAlignment="center"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -61,7 +61,7 @@
 
         <TextView
             android:id="@+id/HomeMenuOptThree"
-            android:layout_width="102dp"
+            android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
@@ -71,7 +71,10 @@
             android:layout_marginBottom="8dp"
             android:background="@color/green"
             android:clickable="true"
-            android:text="Three"
+            android:text="Settings"
+            android:textSize="10pt"
+            android:textAlignment="center"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.67"
@@ -80,7 +83,7 @@
 
         <TextView
             android:id="@+id/HomeMenuOptFour"
-            android:layout_width="104dp"
+            android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
@@ -88,7 +91,10 @@
             android:layout_marginBottom="8dp"
             android:background="@color/purple"
             android:clickable="true"
-            android:text="Four"
+            android:text="Upload File"
+            android:textSize="10pt"
+            android:textAlignment="center"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -98,8 +104,8 @@
 
     <TextView
         android:id="@+id/HomeUsernameDsply"
-        android:layout_width="73dp"
-        android:layout_height="30dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
