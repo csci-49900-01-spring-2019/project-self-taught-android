@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
@@ -26,7 +27,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         String userName = getIntent().getStringExtra("username");
-        TextView userText = (TextView) findViewById(R.id.HomeUsernameDsply);
+        /**TextView userText = (TextView) findViewById(R.id.HomeUsernameDsply);
         userText.setText(userName);
 
         Display display = getWindowManager().getDefaultDisplay();
@@ -42,10 +43,18 @@ public class Home extends AppCompatActivity {
         FrameLayout homeFrameLayout = (FrameLayout) findViewById(R.id.HomeFrameLayout);
         ConstraintLayout homeConLayout = (ConstraintLayout) findViewById(R.id.HomeMenuConstraint);
 
+        homeFrameLayout.setLayoutParams(new ConstraintLayout.LayoutParams(x, y - (y/7)));
+        homeConLayout.setLayoutParams(new ConstraintLayout.LayoutParams(x, y/7));
+
+        /**ViewGroup.LayoutParams params = homeFrameLayout.getLayoutParams();
+        params.height = (y-(y/7));
+        params.height = (x);
+        homeFrameLayout.setLayoutParams(params);
+
         homeConLayout.setMaxWidth(x);
         homeConLayout.setMinWidth(x);
-        homeConLayout.setMaxHeight(y/2);
-        homeConLayout.setMinHeight(y/2);
+        homeConLayout.setMaxHeight(y/7);
+        homeConLayout.setMinHeight(y/7);
 
         Log.d("width", x + "");
         Log.d("height", y +"");
@@ -94,7 +103,7 @@ public class Home extends AppCompatActivity {
             public void onClick(View v) {
                 loadFragment(new HomeFragmentFour());
             }
-        });
+        });**/
     }
 
     @Override
@@ -111,7 +120,7 @@ public class Home extends AppCompatActivity {
     {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.replace(R.id.HomeFrameLayout, frag);
+        fragmentTransaction.replace(R.id.HomeMenuFragLayout, frag);
         fragmentTransaction.commit();
     }
 }
