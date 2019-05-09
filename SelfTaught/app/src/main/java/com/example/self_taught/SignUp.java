@@ -21,6 +21,7 @@ import org.json.JSONObject;
 
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -64,34 +65,14 @@ public class SignUp extends AppCompatActivity {
                 Spinner gradeSpinner = (Spinner) findViewById(R.id.SignUpGradeSpinner);
 
                 //Save the information for sending
-                String firstNameStr = firstNameView.getText().toString();
+                final String firstNameStr = firstNameView.getText().toString();
                 String lastNameStr = lastNameView.getText().toString();
                 String emailStr = emailView.getText().toString();
-                String passwordStr = passwordView.getText().toString();
+                final String passwordStr = passwordView.getText().toString();
                 String genderStr = genderSpinner.getSelectedItem().toString();
                 String gradeStr = gradeSpinner.getSelectedItem().toString();
 
                 //Adding information through API calls.
-               /** RequestQueue myRequestQueue = (RequestQueue) Volley.newRequestQueue(getApplicationContext());
-
-                String url = "https://selftaughapp.com/users";
-                StringRequest myRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                    }
-                })
-                {
-                    protected Map<String, String> getParams()
-                    {
-                        Map<String, String> myData = new HashMap<String, >
-                    }
-                }**/
 
             }
         });

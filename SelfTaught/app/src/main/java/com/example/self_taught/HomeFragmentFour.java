@@ -1,6 +1,7 @@
 package com.example.self_taught;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraDevice;
@@ -27,8 +28,17 @@ public class HomeFragmentFour extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        view = inflater.inflate(R.layout.homemenufragfour, container, false);
+        View view = inflater.inflate(R.layout.homemenufragfour, container, false);
+        Button takePictureBtn = (Button) view.findViewById(R.id.HomeFragFourPictureBtn);
+        Button uploadPictureBtn = (Button) view.findViewById(R.id.HomeFragFourUploadBtn);
+        takePictureBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                Intent pictureIntent = new Intent(getActivity(), TakePicture.class);
+                startActivity(pictureIntent);
+            }
+        });
         return view;
     }
-
 }

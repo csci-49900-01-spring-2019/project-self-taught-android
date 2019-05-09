@@ -8,133 +8,99 @@
     tools:context=".Home">
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="407dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="8dp"
+        android:id="@+id/HomeMenuStatic"
+        android:layout_width="0dp"
+        android:layout_height="113dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/HomeMenuOptOne"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+        <ImageButton
+            android:id="@+id/HomeMenuOptionsBtn"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:background="@color/red"
-            android:clickable="true"
-            android:text="Home"
-            android:textSize="10pt"
-            android:textAlignment="center"
-            android:gravity="center"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.929"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.489"
+            app:srcCompat="@android:color/background_dark" />
 
-        <TextView
-            android:id="@+id/HomeMenuOptTwo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+        <ImageButton
+            android:id="@+id/HomeMenuSearchBtn"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/blue"
-            android:clickable="true"
-            android:text="Search"
-            android:textSize="10pt"
-            android:textAlignment="center"
-            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.32"
+            app:layout_constraintHorizontal_bias="0.702"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.489"
+            app:srcCompat="@android:color/background_dark" />
 
-        <TextView
-            android:id="@+id/HomeMenuOptThree"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+        <ImageButton
+            android:id="@+id/HomeMenuHomeBtn"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/green"
-            android:clickable="true"
-            android:text="Settings"
-            android:textSize="10pt"
-            android:textAlignment="center"
-            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.67"
+            app:layout_constraintHorizontal_bias="0.023"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.489"
+            app:srcCompat="@android:color/background_dark" />
 
         <TextView
-            android:id="@+id/HomeMenuOptFour"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:id="@+id/HomeMenuUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/purple"
-            android:clickable="true"
-            android:text="Upload File"
-            android:textSize="10pt"
-            android:textAlignment="center"
-            android:gravity="center"
+            android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/HomeMenuSearchBtn"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/HomeMenuHomeBtn"
             app:layout_constraintTop_toTopOf="parent" />
+
     </android.support.constraint.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/HomeUsernameDsply"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+    <FrameLayout
+        android:id="@+id/HomeMenuFragLayout"
+        android:layout_width="395dp"
+        android:layout_height="602dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="TextView"
-        android:focusable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <FrameLayout
-        android:id="@+id/homeFrameLayout"
-        android:layout_width="395dp"
-        android:layout_height="618dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/HomeMenuStatic">
 
     </FrameLayout>
 </android.support.constraint.ConstraintLayout>
