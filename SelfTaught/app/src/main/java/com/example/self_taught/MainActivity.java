@@ -8,9 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.app.Activity;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -31,7 +35,7 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BarActivity {
     int x;
     int y;
     URL obj;
@@ -126,12 +130,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(homeIntent);
             }
         });
-
-
-
-
     }
+
+
 }
+
+
+
 
 
 class GetUrlContentTask extends AsyncTask<String, Integer, String>
