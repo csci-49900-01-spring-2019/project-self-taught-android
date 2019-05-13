@@ -38,9 +38,11 @@ import javax.net.ssl.HttpsURLConnection;
 public class MainActivity extends BarActivity {
     int x;
     int y;
-    URL obj;
-    HttpURLConnection conn;
-    CookieManager cManager;
+
+    private String token;
+    private String client;
+    private int status;
+    private int temp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,10 +80,6 @@ public class MainActivity extends BarActivity {
         signUpBtn.setWidth((3*x)/10);
         signUpBtn.setHeight(y/16);
 
-        //cManager = new CookieManager();
-       // CookieHandler.setDefault(cManager);
-
-        //Login to get to the home page
         loginBtn.setOnClickListener(new View.OnClickListener()
         {
 
@@ -95,29 +93,28 @@ public class MainActivity extends BarActivity {
 
                 //Api code to check if these match with the Database
 
-                String endPoint= "https://www.selftaughtapp.com/users/sign_in";
-                /**HttpCookie cookie = new HttpCookie("lang", "en");
-                cookie.setDomain("selftaught.com");
-                cookie.setPath("/users/sign_in");
-                cookie.setVersion(0);
-                try {
-                    cManager.getCookieStore().add(new URI("https://www.selftaughtapp.com/"), cookie);
-                } catch (URISyntaxException e) {
-                    e.printStackTrace();
-                }**/
-
-                //String endPoint = "http://google.com";
+                final String endPoint= "https://www.api.selftaughtapp.com/v1/users/sign_in";
 
                 String urls[] = new String[3];
                 urls[0] = endPoint;
-                //urls[1] = "user[username]=" + chckUser + "&user[password]=" + chckPass;
-                urls[1] = "user[username]=testaccount&user[password]=password123";
-                urls[2] = String.valueOf(android.util.Base64.encode(urls[1].getBytes(), 0));
-                //new GetUrlContentTask().execute(urls);
+                urls[1] = chckUser;
+                urls[2] = chckPass;
+                GetUrlContentTask login = new GetUrlContentTask();
+                login.execute(urls);
+                while(login.getNext() == 0){}
+                token = login.getToken();
+                client = login.getClient();
+                status = login.getStat();
 
-                Intent homeIntent = new Intent(getApplicationContext(), Home.class);
-                homeIntent.putExtra("username", chckUser);
-                startActivity(homeIntent);
+                Log.d("status", status + "");
+                Log.d("client", client);
+                Log.d("token", token);
+                if(status == HttpsURLConnection.HTTP_OK) {
+                    Intent homeIntent = new Intent(getApplicationContext(), Home.class);
+                    homeIntent.putExtra("username", chckUser);
+                    startActivity(homeIntent);
+                }
+                else{} //setup login error
             }
         });
 
@@ -141,21 +138,49 @@ public class MainActivity extends BarActivity {
 
 class GetUrlContentTask extends AsyncTask<String, Integer, String>
 {
+
+    private String header = "";
+    private String client = "";
+    private int status = 0;
+    private int time = 0;
+
+    public String getToken()
+    {
+        return header;
+    }
+
+    public String getClient()
+    {
+        return client;
+    }
+
+    public int getStat()
+    {
+        Log.d("statusDuring", status + "");
+        return status;
+    }
+
+    public int getNext()
+    {
+        return time;
+    }
+
     protected String doInBackground(String... urls)
     {
+        time = 0;
         HttpsURLConnection connection;
         String content = "", line;
-        String login = urls[1];
-        String encode = urls[2];
+        //String login = "email=" + urls[1] + "&password=" + urls[2];
+        String login = "email=testaccount@gmail.com&password=password123";
 
         try {
             URL url = new URL(urls[0]);
             connection = (HttpsURLConnection) url.openConnection();
-            connection.setRequestProperty("Authorization", "Bearer " + encode);
             connection.setRequestMethod("POST");
             //connection.setDoOutput(true);
             connection.setConnectTimeout(5000);
             connection.setReadTimeout(5000);
+
             //For POST
             OutputStream os = connection.getOutputStream();
             BufferedWriter wr = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
@@ -170,21 +195,17 @@ class GetUrlContentTask extends AsyncTask<String, Integer, String>
             {
                 content += line + "\n";
             }
-            connection.disconnect();
 
-            url = new URL("https://www.selftaughtapp.com/notebooks/new");
-            connection = (HttpsURLConnection) url.openConnection();
-            connection.setRequestProperty("Authorization", "Bearer " + encode);
-            connection.setRequestMethod("GET");
-            //connection.setDoOutput(true);
-            connection.setConnectTimeout(5000);
-            connection.setReadTimeout(5000);
-            connection.connect();
-            rd = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            while((line = rd.readLine()) != null) {
-                content += line + "\n";
+            status = connection.getResponseCode();
+
+            if(status == HttpURLConnection.HTTP_OK) {
+                header = connection.getHeaderField("access-token");
+                client = connection.getHeaderField("client");
             }
+
+            Log.d("Header", header);
             connection.disconnect();
+            time = 1;
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
