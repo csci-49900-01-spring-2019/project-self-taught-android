@@ -1,6 +1,7 @@
 package com.example.self_taught;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,11 +18,15 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
         switch (item.getItemId()) {
-            //case R.id.item:
-                // do what you want here
-                //return true;
-            //return true;
+            case R.id.about_us_id:
+                Intent aboutIntent = new Intent(getApplicationContext(), AboutUs.class);
+                startActivity(aboutIntent);
+                return true;
+            case R.id.contact_us_id:
+                //showHelp();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

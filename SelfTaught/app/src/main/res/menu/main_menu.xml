@@ -5,11 +5,11 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 tools:context=".activity.MainActivity">
 
-<item
-    android:id="@+id/search_id"
+<item android:id="@+id/search_id"
     android:title="Search"
-    app:showAsAction="always"
-    />
+    android:icon="@drawable/search_icon"
+    app:showAsAction="collapseActionView|ifRoom"
+    app:actionViewClass="android.widget.SearchView" />
 <item
     android:id="@+id/app_settings_id"
     android:title="App Settings"
@@ -28,11 +28,6 @@ tools:context=".activity.MainActivity">
 <item
     android:id="@+id/contact_us_id"
     android:title="Contact Us"
-    app:showAsAction="never"
-    />
-<item
-    android:id="@+id/sign_out_id"
-    android:title="Sign Out"
     app:showAsAction="never"
     />
 </menu>
