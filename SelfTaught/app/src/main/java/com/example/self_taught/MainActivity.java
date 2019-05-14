@@ -1,8 +1,12 @@
 package com.example.self_taught;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Point;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +29,7 @@ import java.io.OutputStreamWriter;
 import java.net.Authenticator;
 import java.net.CookieHandler;
 import java.net.CookieManager;
+import java.net.CookiePolicy;
 import java.net.HttpCookie;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -32,6 +37,10 @@ import java.net.PasswordAuthentication;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -39,15 +48,20 @@ public class MainActivity extends BarActivity {
     int x;
     int y;
 
-    private String token;
-    private String client;
     private int status;
-    private int temp;
+
+    CookieManager cookieManager;
+    CookieHandler cookieHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /**SharedPreferences shared = getApplicationContext().getSharedPreferences(String.valueOf(R.string.MYPREF), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = shared.edit();
+        editor.putString("Key", "term");
+        editor.commit();**/
 
         //Getting the screen size
         Display display = getWindowManager().getDefaultDisplay();
@@ -87,34 +101,50 @@ public class MainActivity extends BarActivity {
             public void onClick(View v) {
                 TextView userName = (TextView) findViewById(R.id.UsernameText);
                 TextView passWord = (TextView) findViewById(R.id.PasswordText);
-                final String chckUser = userName.getText().toString();
-                final String chckPass = passWord.getText().toString();
-                Log.d("login", "Username: " + chckUser + "\nPassword: " + chckPass);
+                final String chckUser = "csci499class@gmail.com";//userName.getText().toString();
+                final String chckPass = "password499";//passWord.getText().toString();
+                boolean pass = true;
 
-                //Api code to check if these match with the Database
+                if(chckUser.length() != 0 && chckPass.length() != 0 || pass) {
 
-                final String endPoint= "https://www.api.selftaughtapp.com/v1/users/sign_in";
+                    //Log.d("login", "Username: " + chckUser + "\nPassword: " + chckPass);
 
-                String urls[] = new String[3];
-                urls[0] = endPoint;
-                urls[1] = chckUser;
-                urls[2] = chckPass;
-                GetUrlContentTask login = new GetUrlContentTask();
-                login.execute(urls);
-                while(login.getNext() == 0){}
-                token = login.getToken();
-                client = login.getClient();
-                status = login.getStat();
+                    //Api code to check if these match with the Database
 
-                Log.d("status", status + "");
-                Log.d("client", client);
-                Log.d("token", token);
-                if(status == HttpsURLConnection.HTTP_OK) {
-                    Intent homeIntent = new Intent(getApplicationContext(), Home.class);
-                    homeIntent.putExtra("username", chckUser);
-                    startActivity(homeIntent);
+                    final String endPoint = "https://www.api.selftaughtapp.com/v1/users/sign_in";
+
+                    String urls[] = new String[5];
+                    urls[0] = "POST";
+                    urls[1] = endPoint;
+                    urls[2] = "2";
+                    urls[3] = "email=csci499class@gmail.com";//chckUser;
+                    urls[4] = "password=password499";//chckPass;
+                    GetUrlContentTask login = new GetUrlContentTask();
+                    login.setContext(getApplicationContext());
+                    login.execute(urls);
+
+                    Runnable r = new Runnable() {
+                        @Override
+                        public void run() {
+
+                        }
+                    };
+
+                    Handler h = new Handler();
+                    while (login.getStat() == 0) {
+                        h.postDelayed(r, 1000);
+                    }
+                    status = login.getStat();
+
+                    Log.d("status", status + "");
+
+                    if (status == HttpsURLConnection.HTTP_OK) {
+                        Intent homeIntent = new Intent(getApplicationContext(), Home.class);
+                        startActivity(homeIntent);
+                    } else {
+                    } //setup login error
+
                 }
-                else{} //setup login error
             }
         });
 
@@ -123,8 +153,10 @@ public class MainActivity extends BarActivity {
 
             @Override
             public void onClick(View v) {
-                Intent homeIntent = new Intent(getApplicationContext(), SignUp.class);
-                startActivity(homeIntent);
+                Intent viewIntent =
+                        new Intent("android.intent.action.VIEW",
+                                Uri.parse("https://www.selftaughtapp.com/users/sign_up"));
+                startActivity(viewIntent);
             }
         });
     }
@@ -132,95 +164,3 @@ public class MainActivity extends BarActivity {
 
 }
 
-
-
-
-
-class GetUrlContentTask extends AsyncTask<String, Integer, String>
-{
-
-    private String header = "";
-    private String client = "";
-    private int status = 0;
-    private int time = 0;
-
-    public String getToken()
-    {
-        return header;
-    }
-
-    public String getClient()
-    {
-        return client;
-    }
-
-    public int getStat()
-    {
-        Log.d("statusDuring", status + "");
-        return status;
-    }
-
-    public int getNext()
-    {
-        return time;
-    }
-
-    protected String doInBackground(String... urls)
-    {
-        time = 0;
-        HttpsURLConnection connection;
-        String content = "", line;
-        //String login = "email=" + urls[1] + "&password=" + urls[2];
-        String login = "email=testaccount@gmail.com&password=password123";
-
-        try {
-            URL url = new URL(urls[0]);
-            connection = (HttpsURLConnection) url.openConnection();
-            connection.setRequestMethod("POST");
-            //connection.setDoOutput(true);
-            connection.setConnectTimeout(5000);
-            connection.setReadTimeout(5000);
-
-            //For POST
-            OutputStream os = connection.getOutputStream();
-            BufferedWriter wr = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
-            wr.write(login);
-            wr.flush();
-            wr.close();
-            os.close();
-
-            connection.connect();
-            BufferedReader rd = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            while((line = rd.readLine()) != null)
-            {
-                content += line + "\n";
-            }
-
-            status = connection.getResponseCode();
-
-            if(status == HttpURLConnection.HTTP_OK) {
-                header = connection.getHeaderField("access-token");
-                client = connection.getHeaderField("client");
-            }
-
-            Log.d("Header", header);
-            connection.disconnect();
-            time = 1;
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return content;
-    }
-
-    protected void onProgressUpdate(Integer... progress)
-    {
-
-    }
-
-    protected void onPostExecute(String result)
-    {
-        Log.d("Result", result);
-    }
-}

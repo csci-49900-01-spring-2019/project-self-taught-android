@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Self-Taught</string>
     <string name="title_activity_home_screen">HomeScreen</string>
+    <string name="MYPREF">myPrefFile</string>
     <string-array name="genders">
         <item>Secret</item>
         <item>Male</item>
@@ -14,4 +15,5 @@
         <item>Graduate</item>
     </string-array>
     <string name="take_picture">Take Picture</string>
+    <string name="apiCall">https://www.api.selftaughtapp.com/v1/</string>
 </resources>
