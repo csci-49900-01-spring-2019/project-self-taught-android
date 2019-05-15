@@ -23,10 +23,10 @@ public class BaseActivity extends AppCompatActivity {
             case R.id.about_us_id:
                 Intent aboutIntent = new Intent(getApplicationContext(), AboutUs.class);
                 startActivity(aboutIntent);
-                return true;
             case R.id.contact_us_id:
                 //showHelp();
-                return true;
+                Intent contactIntent = new Intent(getApplicationContext(), ContactUs.class);
+                startActivity(contactIntent);
             default:
                 return super.onOptionsItemSelected(item);
         }
