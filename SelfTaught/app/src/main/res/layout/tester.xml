@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/FragOneMyFriendsImage"
+        android:layout_width="128dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/FragOneMyFriends"
+        app:layout_constraintEnd_toEndOf="@+id/FragOneMyFriends"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="@+id/FragOneMyFriends"
+        app:layout_constraintTop_toTopOf="@+id/FragOneMyFriends"
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/FragOneMyTestsImage"
+        android:layout_width="128dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/FragOneMyFriends"
+        app:layout_constraintEnd_toStartOf="@+id/FragOneMyQuestions"
+        app:layout_constraintStart_toStartOf="@+id/FragOneMyTests"
+        app:layout_constraintTop_toTopOf="@+id/FragOneMyTests"
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@color/purple" />
+
+    <ImageView
+        android:id="@+id/FragOneMyQuestionsImage"
+        android:layout_width="128dp"
+        android:layout_height="136dp"
+        app:layout_constraintBottom_toBottomOf="@+id/FragOneMyQuestions"
+        app:layout_constraintEnd_toEndOf="@+id/FragOneMyQuestions"
+        app:layout_constraintStart_toStartOf="@+id/FragOneMyQuestions"
+        app:layout_constraintTop_toTopOf="@+id/FragOneMyQuestions"
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@color/red" />
+
+    <TextView
+        android:id="@+id/FragOneMyNotebookText"
+        android:layout_width="80dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="My Notebooks"
+        app:layout_constraintBottom_toTopOf="@+id/FragOneMyQuestions"
+        app:layout_constraintEnd_toEndOf="@+id/FragOneMyNotebooks"
+        app:layout_constraintStart_toStartOf="@+id/FragOneMyNotebooks"
+        app:layout_constraintTop_toBottomOf="@+id/FragOneMyNotebooksImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/FragOneMyTestsText"
+        android:layout_width="80dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="My Tests"
+        app:layout_constraintBottom_toTopOf="@+id/FragOneMyFriends"
+        app:layout_constraintEnd_toStartOf="@+id/FragOneMyQuestions"
+        app:layout_constraintStart_toStartOf="@+id/FragOneMyTests"
+        app:layout_constraintTop_toBottomOf="@+id/FragOneMyTestsImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/FragOneMyQuestionsText"
+        android:layout_width="80dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="My Questions"
+        app:layout_constraintBottom_toBottomOf="@+id/FragOneMyQuestions"
+        app:layout_constraintEnd_toEndOf="@+id/FragOneMyQuestions"
+        app:layout_constraintStart_toStartOf="@+id/FragOneMyQuestions"
+        app:layout_constraintTop_toBottomOf="@+id/FragOneMyQuestionsImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/FragOneMyFriendsText"
+        android:layout_width="80dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="My Notebooks"
+        app:layout_constraintBottom_toBottomOf="@+id/FragOneMyFriends"
+        app:layout_constraintEnd_toEndOf="@+id/FragOneMyFriends"
+        app:layout_constraintStart_toStartOf="@+id/FragOneMyFriends"
+        app:layout_constraintTop_toBottomOf="@+id/FragOneMyFriendsImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/FragOneMyNotebooksImage"
+        android:layout_width="128dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/FragOneMyQuestions"
+        app:layout_constraintEnd_toEndOf="@+id/FragOneMyNotebooks"
+        app:layout_constraintStart_toStartOf="@+id/FragOneMyNotebooks"
+        app:layout_constraintTop_toTopOf="@+id/FragOneMyNotebooks"
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@color/green" />
+
+    <TextView
+        android:id="@+id/FragOneMyFriends"
+        android:layout_width="198dp"
+        android:layout_height="233dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="22pt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FragOneMyTests"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/FragOneMyQuestions"
+        android:layout_width="198dp"
+        android:layout_height="233dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/FragOneMyTests"
+        app:layout_constraintTop_toBottomOf="@+id/FragOneMyNotebooks"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/FragOneMyTests"
+        android:layout_width="198dp"
+        android:layout_height="233dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FragOneMyNotes"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/FragOneMyNotebooks"
+        android:layout_width="198dp"
+        android:layout_height="233dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/FragOneMyNotes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/FragOneMyNotes"
+        android:layout_width="198dp"
+        android:layout_height="233dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/FragOneMyFriends"
+        app:layout_constraintTop_toBottomOf="@+id/FragOneMyQuestions"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
+
+    <ImageView
+        android:id="@+id/FragOneMyNotesImage"
+        android:layout_width="128dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/FragOneMyTests"
+        app:layout_constraintEnd_toStartOf="@+id/FragOneMyNotebooks"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/FragOneMyNotes"
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@color/blue" />
+
+    <TextView
+        android:id="@+id/FragOneMyNotesText"
+        android:layout_width="80dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="My Notes"
+        app:layout_constraintBottom_toTopOf="@+id/FragOneMyTests"
+        app:layout_constraintEnd_toEndOf="@+id/FragOneMyNotes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FragOneMyNotesImage"
+        app:layout_constraintVertical_bias="0.0" />
+</android.support.constraint.ConstraintLayout>

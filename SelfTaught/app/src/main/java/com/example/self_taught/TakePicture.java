@@ -28,7 +28,9 @@ public class TakePicture extends AppCompatActivity {
         retryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dispatchTakePictureIntent();
+
+                Intent toHome = new Intent(getApplicationContext(), Home.class);
+                startActivity(toHome);
             }
         });
         succeedBtn.setOnClickListener(new View.OnClickListener() {

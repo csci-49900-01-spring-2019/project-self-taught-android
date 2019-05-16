@@ -1,6 +1,8 @@
 package com.example.self_taught;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
@@ -21,6 +23,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class Home extends BarActivity {
 
     int x;
@@ -32,10 +36,8 @@ public class Home extends BarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        String userName = getIntent().getStringExtra("username");
 
         loadFragment(new HomeFragmentOne());
-
 
         /**TextView userText = (TextView) findViewById(R.id.HomeUsernameDsply);
          userText.setText(userName);
@@ -153,7 +155,7 @@ public class Home extends BarActivity {
         finish();
     }
 */
-    private void loadFragment(HomeFragmentOne frag)
+    private void loadFragment(Fragment frag)
     {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
