@@ -1,6 +1,7 @@
 package com.example.self_taught;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -47,9 +48,11 @@ public class MyNotes extends AppCompatActivity {
         x = size.x;
         y = size.y;
 
+        SharedPreferences shared = getSharedPreferences(String.valueOf(R.string.MYPREF), Context.MODE_PRIVATE);
+
         String toSend[] = new String[3];
         toSend[0] = "GET";
-        toSend[1] = "https://www.api.selftaughtapp.com/vq/users/" + :user_id/notebooks";
+        toSend[1] = "https://www.api.selftaughtapp.com/vq/users/" + shared.getString("id", ":user_id") + "/notebooks";
         toSend[2] = "0";
         GetUrlContentTask getTask = new GetUrlContentTask();
         getTask.setContext(getApplicationContext());
