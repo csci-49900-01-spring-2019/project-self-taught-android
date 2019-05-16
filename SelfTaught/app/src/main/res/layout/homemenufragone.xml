@@ -6,162 +6,246 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/HomeMenuNotebookText"
+        android:layout_width="73dp"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="348dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Saved Notes"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.856"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="44dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="My Notes"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="44dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:text="My Notebooks"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.155"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.031"
-        app:srcCompat="@android:color/holo_green_light" />
+        android:layout_marginBottom="8dp"
+        android:text="My Notebooks"
+        app:layout_constraintBottom_toBottomOf="@+id/HomeMenuNotebooks"
+        app:layout_constraintEnd_toEndOf="@+id/HomeMenuNotebooks"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/HomeMenuNotebooks"
+        app:layout_constraintTop_toBottomOf="@+id/HomeMenuNotebookImage"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/blue" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="216dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/purple" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginTop="216dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/colorPrimary" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/HomeMenuQuestionText"
+        android:layout_width="73dp"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="348dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="My Questions"
+        app:layout_constraintBottom_toBottomOf="@+id/HomeMenuQuestions"
+        app:layout_constraintEnd_toStartOf="@+id/HomeMenuTests"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/HomeMenuQuestions"
+        app:layout_constraintTop_toBottomOf="@+id/HomeMenuQuestionImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/HomeMenuTestText"
+        android:layout_width="73dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="My Tests"
+        app:layout_constraintBottom_toBottomOf="@+id/HomeMenuTests"
+        app:layout_constraintEnd_toEndOf="@+id/HomeMenuTests"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="@+id/HomeMenuTests"
+        app:layout_constraintTop_toBottomOf="@+id/HomeMenuTestImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/HomeMenuFriendText"
+        android:layout_width="73dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="My Friends"
+        app:layout_constraintBottom_toBottomOf="@+id/HomeMenuFriends"
+        app:layout_constraintEnd_toEndOf="@+id/HomeMenuFriends"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toStartOf="@+id/HomeMenuFriends"
+        app:layout_constraintTop_toBottomOf="@+id/HomeMenuFriendImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/HomeMenuFriends"
+        android:layout_width="202dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HomeMenuQuestions"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/HomeMenuTests"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/HomeMenuQuestions"
+        app:layout_constraintTop_toBottomOf="@+id/HomeMenuNotebooks"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/HomeMenuQuestions"
+        android:layout_width="202dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HomeMenuNotes"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/HomeMenuNotes"
+        android:layout_width="202dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/HomeMenuNotebooks"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/HomeMenuNotes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/HomeMenuNoteImage"
+        android:layout_width="119dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/HomeMenuNotes"
+        app:layout_constraintEnd_toEndOf="@+id/HomeMenuNotes"
+        app:layout_constraintStart_toStartOf="@+id/HomeMenuNotes"
+        app:layout_constraintTop_toTopOf="@+id/HomeMenuNotes"
+        app:layout_constraintVertical_bias="0.173"
+        app:srcCompat="@color/black" />
+
+    <ImageView
+        android:id="@+id/HomeMenuNotebookImage"
+        android:layout_width="119dp"
+        android:layout_height="108dp"
+        app:layout_constraintBottom_toBottomOf="@+id/HomeMenuNotebooks"
+        app:layout_constraintEnd_toEndOf="@+id/HomeMenuNotebooks"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="@+id/HomeMenuNotebooks"
+        app:layout_constraintTop_toTopOf="@+id/HomeMenuNotebooks"
+        app:layout_constraintVertical_bias="0.173"
+        app:srcCompat="@color/black" />
+
+    <ImageView
+        android:id="@+id/HomeMenuQuestionImage"
+        android:layout_width="119dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/HomeMenuQuestions"
+        app:layout_constraintEnd_toStartOf="@+id/HomeMenuTests"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="@+id/HomeMenuQuestions"
+        app:layout_constraintTop_toTopOf="@+id/HomeMenuQuestions"
+        app:layout_constraintVertical_bias="0.173"
+        app:srcCompat="@color/black" />
+
+    <ImageView
+        android:id="@+id/HomeMenuTestImage"
+        android:layout_width="119dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/HomeMenuTests"
+        app:layout_constraintEnd_toEndOf="@+id/HomeMenuTests"
+        app:layout_constraintStart_toStartOf="@+id/HomeMenuTests"
+        app:layout_constraintTop_toTopOf="@+id/HomeMenuTests"
+        app:layout_constraintVertical_bias="0.17000002"
+        app:srcCompat="@color/black" />
+
+    <ImageView
+        android:id="@+id/HomeMenuFriendImage"
+        android:layout_width="119dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/HomeMenuFriends"
+        app:layout_constraintEnd_toEndOf="@+id/HomeMenuFriends"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/HomeMenuFriends"
+        app:layout_constraintVertical_bias="0.18"
+        app:srcCompat="@color/black" />
+
+    <TextView
+        android:id="@+id/HomeMenuNoteText"
+        android:layout_width="73dp"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="My Tests"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        android:text="My Notes"
+        app:layout_constraintBottom_toBottomOf="@+id/HomeMenuNotes"
+        app:layout_constraintEnd_toEndOf="@+id/HomeMenuNotes"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton7"
-        app:layout_constraintVertical_bias="0.166" />
+        app:layout_constraintTop_toBottomOf="@+id/HomeMenuNoteImage"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/HomeMenuTakePicture"
+        android:layout_width="99dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:layout_constraintVertical_bias="0.121"
-        app:srcCompat="@color/red" />
-
-
+        app:layout_constraintStart_toEndOf="@+id/HomeMenuFriends"
+        app:layout_constraintTop_toBottomOf="@+id/HomeMenuTests"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
 </android.support.constraint.ConstraintLayout>
