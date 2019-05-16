@@ -20,7 +20,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SignUp"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".Home"
         android:configChanges="orientation"
         android:screenOrientation="portrait"/>
@@ -41,10 +42,20 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".TakePicture"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".FileSave"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".AboutUs"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".ContactUs"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">

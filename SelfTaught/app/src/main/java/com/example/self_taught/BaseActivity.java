@@ -3,9 +3,12 @@ package com.example.self_taught;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import java.util.prefs.Preferences;
 
 public class BaseActivity extends AppCompatActivity {
     // Activity code here
@@ -19,16 +22,20 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
+        Log.d("item", item.getItemId()+"");
+        Log.d("about us id", R.id.about_us_id+"");
         switch (item.getItemId()) {
+
             case R.id.about_us_id:
                 Intent aboutIntent = new Intent(getApplicationContext(), AboutUs.class);
                 startActivity(aboutIntent);
-                return true;
+                break;
             case R.id.contact_us_id:
                 //showHelp();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+                Intent contactIntent = new Intent(getApplicationContext(), ContactUs.class);
+                startActivity(contactIntent);
+                break;
         }
+        return super.onOptionsItemSelected(item);
     }
 }

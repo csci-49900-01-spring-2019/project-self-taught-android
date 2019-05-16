@@ -11,16 +11,6 @@ tools:context=".activity.MainActivity">
     app:showAsAction="collapseActionView|ifRoom"
     app:actionViewClass="android.widget.SearchView" />
 <item
-    android:id="@+id/app_settings_id"
-    android:title="App Settings"
-    app:showAsAction="never"
-    />
-<item
-    android:id="@+id/user_settings_id"
-    android:title="User Settings"
-    app:showAsAction="never"
-    />
-<item
     android:id="@+id/about_us_id"
     android:title="About Us"
     app:showAsAction="never"
