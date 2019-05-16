@@ -131,7 +131,8 @@ public class MainActivity extends BarActivity {
                     };
 
                     Handler h = new Handler();
-                    while (login.getStat() == 0) {
+                    int tempInt = 0;
+                    while (login.getStat() == 0 || tempInt++ == 5) {
                         h.postDelayed(r, 1000);
                     }
                     status = login.getStat();
@@ -140,6 +141,9 @@ public class MainActivity extends BarActivity {
 
                     if (status == HttpsURLConnection.HTTP_OK) {
                         Intent homeIntent = new Intent(getApplicationContext(), Home.class);
+                        int at = chckUser.indexOf('@');
+                        String username = chckUser.substring(0, at - 1);
+                        homeIntent.putExtra("username", username);
                         startActivity(homeIntent);
                     } else {
                     } //setup login error

@@ -36,11 +36,8 @@ public class Home extends BarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         loadFragment(new HomeFragmentOne());
-
-        SharedPreferences shared = getApplicationContext().getSharedPreferences(String.valueOf(R.string.MYPREF), Context.MODE_PRIVATE);
-        Log.d("Shared", shared.getString("Key", "Fail"));
-
 
         /**TextView userText = (TextView) findViewById(R.id.HomeUsernameDsply);
          userText.setText(userName);
@@ -158,7 +155,7 @@ public class Home extends BarActivity {
         finish();
     }
 */
-    private void loadFragment(HomeFragmentOne frag)
+    private void loadFragment(Fragment frag)
     {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
