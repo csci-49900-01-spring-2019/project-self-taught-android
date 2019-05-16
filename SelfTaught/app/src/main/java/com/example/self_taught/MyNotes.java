@@ -48,7 +48,7 @@ public class MyNotes extends AppCompatActivity {
         x = size.x;
         y = size.y;
 
-        SharedPreferences shared = getSharedPreferences(String.valueOf(R.string.MYPREF), Context.MODE_PRIVATE);
+        /**SharedPreferences shared = getSharedPreferences(String.valueOf(R.string.MYPREF), Context.MODE_PRIVATE);
 
         String toSend[] = new String[3];
         toSend[0] = "GET";
@@ -74,7 +74,7 @@ public class MyNotes extends AppCompatActivity {
         if (status == HttpsURLConnection.HTTP_OK) {
             response = getTask.getContent();
         } else {
-        } //setup login error
+        } //setup login error**/
 
         ArrayList<String> names = decipher(getNotes());
 
